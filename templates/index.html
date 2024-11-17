@@ -1,0 +1,42 @@
+{% extends 'layouts/layout.html' %}
+{% block title%}
+NoteKeepers
+{% endblock%}
+{% block content%}
+        <div class="container">
+            <div>
+            <h1 class="title">NoteKeepers</h1>
+            <p class="text">Embrace the convenience of having your documents at your fingertips, accessible anytime, anywhere.</p>
+            </div>  
+            <div class="card-container">
+              <div class="card">
+                <h5 class="card-title">Transcribe</h5>
+                <p class="card-text">Effortlessly convert your documents and notes into digital formats with the help of Tesseract AI OCR.</p>
+                <a href="/transcribe">
+                    <button class="btn">View</button>
+                </a>
+              </div>
+              <div class="card">
+                <h5 class="card-title">Profile</h5>
+                <p class="card-text">Access, Edit, View your data. You are always in charge.</p>
+                <a href="/profile">
+                    <button class="btn">View</button>
+                </a>
+              </div>
+              <div class="card">
+                <h5 class="card-title">About NoteKeepers</h5>
+                <p class="card-text">Our Information, History and Goals.</p>
+                <a href="/about">
+                    <button class="btn">View</button>
+                </a>
+              </div>
+              <div class="card">
+                <h5 class="card-title">Account</h5>
+                <p class="card-text">Manage your account details.</p>
+                <a href="/account">
+                    <button class="btn">View</button>
+                </a>
+              </div>
+            </div>
+          </div>
+{% endblock%}

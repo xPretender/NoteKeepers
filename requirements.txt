@@ -1,0 +1,8 @@
+Flask==1.1.4
+Flask-Session==0.3.2
+cs50==8.0.0
+opencv-python==4.5.1.48
+numpy==1.21.2
+pytesseract==0.3.8
+Pillow==8.4.0
+spellchecker==0.4

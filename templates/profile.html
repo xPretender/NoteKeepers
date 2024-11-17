@@ -1,0 +1,56 @@
+<!-- Your template file -->
+
+{% extends 'layouts/layout.html' %}
+{% block title %}
+    {{ userData[0].full_name }}'s Profile
+{% endblock %}
+
+{% block content %}
+    <div class="custom-container">
+        <div class="left-content">
+            <h1>Welcome, {{ userData[0].full_name }}</h1>
+             <a href="/account">
+            <button type="submit" class="btn btn-primary">Edit Account</button>
+        </a>
+        <a href="/logout">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </a>
+           
+        </div>
+        <div class="right-content d-flex justify-content-center align-items-center">
+            <h2>Here are your transcriptions</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>File ID</th>
+                        <th>File Name</th>
+                        <th>File Description</th>
+                        <th>File</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for transcription in transcriptions %}
+                    <tr>
+                        <td>{{ transcription.id }}</td>
+                        <td>{{ transcription.file_name }}</td>
+                        <td>{{ transcription.description }}</td>
+                        <td>
+                            <form action="/transcripted" method="POST">
+                                <input type="hidden" name="transcription_id" value="{{ transcription.id }}">
+                                <button type="submit" class="btn btn-secondary">View</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/deleteTranscription" method="POST">
+                                <input type="hidden" name="transcription_id" value="{{ transcription.id }}">
+                                <button type="submit" class="btn btn-secondary">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}
+{{file_name}}'s Preview
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1 class="title">Transcripted Text</h1>
+        <div class="text col-md-10">
+
+        
+        <pre>
+            {{ text }}
+        </pre>
+        
+        </div>
+        <br>
+        <center>
+        <div>
+            <a href="{{ url_for('download_file', filename=file_name) }}" download>
+                <button class="btn mt-4">Download</button>
+            </a>
+            <a href="/profile" >
+                <button class="btn mt-4">Return</button>
+            </a>
+        </div>
+        </center>
+    </div>
+    
+</div>
+
+{% endblock %}
